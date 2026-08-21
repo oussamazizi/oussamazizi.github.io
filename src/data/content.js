@@ -19,7 +19,7 @@ export const intro = {
     'Je conçois des logiciels et je les fais tenir en production : applications web, applications mobiles publiées, et les systèmes qui tournent derrière.',
   body: [
     "En entreprise, je travaille sur des applications métier — refontes d'interfaces complètes, fronts web, back-ends et outils internes. Sept ans à faire le trajet entier : du besoin exprimé jusqu'au logiciel qui tourne chez l'utilisateur.",
-    "Le reste du temps, je construis mes propres produits. Seul, et jusqu'au bout : la conception, le code, la publication, puis tout ce qui vient après. Trois sont publics aujourd'hui — ce sont les seuls que je montre ici.",
+    "Le reste du temps, je construis mes propres produits. Seul, et jusqu'au bout : la conception, le code, la publication, puis tout ce qui vient après. Trois sont publics aujourd'hui.",
   ],
   facts: [
     { k: 'Expérience', v: '7 ans' },
