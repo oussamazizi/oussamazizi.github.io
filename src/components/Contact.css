@@ -16,9 +16,9 @@
 .contact__title {
   font-family: var(--display);
   font-weight: 900;
-  font-size: clamp(2.6rem, 10vw, 8rem);
-  line-height: 0.86;
-  letter-spacing: -0.05em;
+  font-size: clamp(1.9rem, 5.6vw, 4.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.038em;
   text-transform: uppercase;
 }
 .contact__accent {

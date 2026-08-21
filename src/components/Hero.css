@@ -25,18 +25,29 @@
   margin: clamp(1.5rem, 5vw, 3.5rem) 0 clamp(2rem, 6vw, 4rem);
   font-family: var(--display);
   font-weight: 900;
-  font-size: clamp(2.4rem, 9vw, 7.5rem);
-  line-height: 0.9;
-  letter-spacing: -0.045em;
+  line-height: 0.94;
+  letter-spacing: -0.04em;
   text-transform: uppercase;
 }
+
+/* le nom, en capitales espacées, au-dessus du métier */
+.hero__name {
+  display: block;
+  font-size: clamp(0.78rem, 1.5vw, 1rem);
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  color: var(--ink-3);
+  margin-bottom: clamp(0.6rem, 1.6vw, 1.1rem);
+}
+
+/* « Ingénieur logiciel » tient toujours sur une seule ligne */
 .hero__line {
   display: block;
+  font-size: clamp(1.5rem, 7.4vw, 6.5rem);
+  white-space: nowrap;
 }
-.hero__line--accent {
+.hero__accent {
   color: var(--accent);
-  /* décalage typographique : le second mot rentre légèrement */
-  padding-left: 0.06em;
 }
 
 /* --- corps éditorial en deux colonnes --- */

@@ -14,10 +14,12 @@ export default function Hero() {
 
         <hr className="rule--ink rule" />
 
-        {/* Le titre : deux mots, pleine largeur, encre pleine */}
+        {/* Le nom, puis le métier d'un seul tenant */}
         <h1 className="hero__title">
-          <span className="hero__line">Ingénieur</span>
-          <span className="hero__line hero__line--accent">Logiciel</span>
+          <span className="hero__name">{identity.name}</span>
+          <span className="hero__line">
+            Ingénieur <span className="hero__accent">logiciel</span>
+          </span>
         </h1>
 
         <div className="hero__body">
