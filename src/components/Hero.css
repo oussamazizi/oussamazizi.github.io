@@ -25,10 +25,9 @@
   margin: clamp(1.5rem, 5vw, 3.5rem) 0 clamp(2rem, 6vw, 4rem);
   font-family: var(--display);
   font-weight: 900;
-  /* le mot occupe toute la largeur disponible, sans jamais déborder */
-  font-size: clamp(3.2rem, 16.2vw, 15rem);
-  line-height: 0.82;
-  letter-spacing: -0.055em;
+  font-size: clamp(2.4rem, 9vw, 7.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.045em;
   text-transform: uppercase;
 }
 .hero__line {
