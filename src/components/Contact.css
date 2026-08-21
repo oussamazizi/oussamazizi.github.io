@@ -1,0 +1,93 @@
+/* Inversion d'encre : la dernière page du cahier passe en noir. */
+.contact {
+  background: var(--ink);
+  color: var(--paper);
+  padding: var(--s7) 0 var(--s6);
+}
+
+.label--invert {
+  color: var(--paper);
+  margin-bottom: 1.4rem;
+}
+.label--invert::after {
+  background: rgba(250, 249, 246, 0.22);
+}
+
+.contact__title {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(2.6rem, 10vw, 8rem);
+  line-height: 0.86;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+.contact__accent {
+  color: var(--accent);
+}
+
+.contact__note {
+  margin-top: var(--s3);
+  max-width: 42ch;
+  font-size: 1.05rem;
+  color: rgba(250, 249, 246, 0.68);
+}
+
+.contact__list {
+  margin-top: var(--s5);
+  border-top: 1px solid rgba(250, 249, 246, 0.22);
+}
+.contact__list li {
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  gap: 1rem;
+  align-items: baseline;
+  padding: 1.05rem 0;
+  border-bottom: 1px solid rgba(250, 249, 246, 0.15);
+}
+
+.contact__key {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(250, 249, 246, 0.5);
+}
+
+.contact__value {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(1.05rem, 2.6vw, 1.65rem);
+  letter-spacing: -0.025em;
+  color: var(--paper);
+  word-break: break-word;
+  transition: color 0.22s var(--ease);
+  position: relative;
+  display: inline-block;
+}
+a.contact__value::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 1.5px;
+  background: var(--accent);
+  transition: width 0.3s var(--ease);
+}
+a.contact__value:hover {
+  color: var(--accent);
+}
+a.contact__value:hover::after {
+  width: 100%;
+}
+.contact__value--plain {
+  font-weight: 400;
+  color: rgba(250, 249, 246, 0.78);
+}
+
+@media (max-width: 620px) {
+  .contact__list li {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+}

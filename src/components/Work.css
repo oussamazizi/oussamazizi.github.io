@@ -1,0 +1,235 @@
+/* ---------- ossature de section (partagée) ---------- */
+.section {
+  padding: var(--s7) 0;
+}
+.section__head {
+  max-width: 34ch;
+  margin-bottom: var(--s6);
+}
+.section__head .label {
+  margin-bottom: 1.1rem;
+}
+.section__note {
+  margin-top: var(--s2);
+  max-width: 46ch;
+  font-size: 1.02rem;
+  color: var(--ink-2);
+}
+
+/* ---------- une double page produit ---------- */
+.spread {
+  padding-top: var(--s6);
+}
+.spread:first-of-type {
+  padding-top: 0;
+}
+
+.spread__head {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(0.9rem, 2.5vw, 1.8rem);
+  margin-bottom: 0.6rem;
+}
+
+.spread__index {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  color: var(--ink-faint);
+}
+
+.spread__name {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(2.6rem, 9vw, 7.5rem);
+  line-height: 0.86;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  margin-right: auto;
+}
+
+.spread__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: none;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.spread__pip {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+/* le halo ne clignote que pour ce qui tourne réellement en ligne */
+.spread__pip--live {
+  animation: pip 2.4s var(--ease) infinite;
+}
+@keyframes pip {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(193, 68, 14, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(193, 68, 14, 0);
+  }
+}
+
+/* ---------- grille de la double page ---------- */
+.spread__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: clamp(1.75rem, 5vw, 4.5rem);
+  padding-top: var(--s3);
+}
+.spread--flipped .spread__grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+}
+.spread--flipped .spread__text {
+  order: 2;
+}
+.spread--flipped .spread__aside {
+  order: 1;
+}
+
+/* ---------- texte ---------- */
+.spread__tagline {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 0.9rem;
+}
+
+.spread__lede {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.1vw, 1.6rem);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-wrap: balance;
+  /* filet d'attaque, comme un chapô de magazine */
+  padding-left: 1.1rem;
+  border-left: 2px solid var(--accent);
+}
+
+.spread__para {
+  margin-top: 1.15rem;
+  font-size: 1rem;
+  line-height: 1.72;
+  color: var(--ink-2);
+}
+
+.spread__features {
+  margin-top: var(--s3);
+  border-top: 1px solid var(--rule);
+}
+.spread__features li {
+  display: grid;
+  grid-template-columns: 1.6rem 1fr;
+  gap: 0.4rem;
+  padding: 0.72rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.94rem;
+  color: var(--ink);
+}
+.spread__features li::before {
+  content: '—';
+  font-family: var(--mono);
+  color: var(--accent);
+}
+
+/* ---------- colonne latérale ---------- */
+.spread__aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+}
+
+.spread__figure {
+  padding: clamp(1.1rem, 3vw, 2rem);
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+}
+
+.spread__specs {
+  border-top: 2px solid var(--ink);
+}
+.spread__specs > div {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.spread__specs dt {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  padding-top: 0.18rem;
+}
+.spread__specs dd {
+  font-size: 0.93rem;
+  color: var(--ink);
+}
+.spread__specs .arrow-link svg {
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.spread__stack-label {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 0.7rem;
+}
+
+/* ---------- adaptation ---------- */
+@media (max-width: 900px) {
+  .spread__grid,
+  .spread--flipped .spread__grid {
+    grid-template-columns: 1fr;
+  }
+  .spread--flipped .spread__text,
+  .spread--flipped .spread__aside {
+    order: initial;
+  }
+  .spread__aside {
+    order: -1;
+  }
+}
+
+@media (max-width: 620px) {
+  .spread__head {
+    flex-wrap: wrap;
+    gap: 0.5rem 0.9rem;
+  }
+  .spread__name {
+    width: 100%;
+    order: 2;
+  }
+  .spread__status {
+    order: 1;
+    margin-left: auto;
+  }
+  .spread__specs > div {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+}
